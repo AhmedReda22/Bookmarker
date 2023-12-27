@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="shortcut icon" href="imgs/bookmark.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <main class="main py-5 position-relative">
+      <div class="container">
+        <div
+          class="h1-wrapper d-flex justify-content-center align-items-center"
+        >
+          <h1 class="py-2 position-relative">Bookmarker</h1>
+          <div class="h1-background"></div>
+        </div>
+        <hr class="pt-4" />
+        <section
+          class="w-100 d-flex justify-content-center align-items-center flex-column"
+        >
+          <h2>
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+          <div
+            class="site-name w-100 d-flex justify-content-start flex-column pb-4"
+          >
+            <label for="siteName" class="pb-2 fw-semibold"
+              ><i class="fa-solid fa-book-bookmark"></i> Site Name</label
+            >
+            <div class="icon position-relative">
+              <input
+                type="text"
+                class="form-control"
+                id="siteName"
+                placeholder="Bookmark Name"
+              />
+              <span id="iconError2" class="position-absolute"
+                ><i class="fa-solid fa-circle-exclamation"></i
+              ></span>
+              <span id="iconCorrect2" class="position-absolute"
+                ><i class="fa-solid fa-circle-check"></i
+              ></span>
+            </div>
+            <p id="nameVaild" class="text-start text-danger">
+              Site name must contain at least 3 characters
+            </p>
+          </div>
+          <div
+            class="site-name w-100 d-flex justify-content-start flex-column pb-4"
+          >
+            <label for="siteUrl" class="pb-2 fw-semibold"
+              ><i class="fa-solid fa-link"></i> Site URL</label
+            >
+            <div class="icon position-relative">
+              <input
+                type="text"
+                class="form-control"
+                id="siteUrl"
+                placeholder="Website URL"
+              />
+              <span id="iconError" class="position-absolute"
+                ><i class="fa-solid fa-circle-exclamation"></i
+              ></span>
+              <span id="iconCorrect" class="position-absolute"
+                ><i class="fa-solid fa-circle-check"></i
+              ></span>
+            </div>
+            <p id="urlVaild" class="text-start text-danger">
+              Site URL must be valid: https://example.com
+            </p>
+          </div>
+
+          <button
+            id="submit"
+            class="submit btn border-0 px-5"
+            onclick="submit()"
+          >
+            Submit
+          </button>
+          <button
+            id="update"
+            class="update text-white btn border-0 px-5 btn-warning"
+            onclick="showUpdate()"
+          >
+            Update
+          </button>
+          <div
+            class="search w-100 d-flex justify-content-start flex-column pb-4"
+          >
+            <label for="search" class="pb-2 fw-semibold"
+              ><i class="fa-solid fa-magnifying-glass"></i> Search</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="search"
+              placeholder="Search..."
+              onkeyup="search(this.value)"
+              ;
+            />
+          </div>
+        </section>
+        <hr class="pt-4" />
+        <section>
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Update</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </section>
+      </div>
+
+      <div id="box" class="box position-absolute top-0 start-0 w-100 h-100 z-3">
+        <div
+          class="popub-box position-fixed top-50 start-50 translate-middle bg-white p-4 rounded-2 shadow-lg"
+        >
+          <div
+            class="box-header w-100 d-flex justify-content-between align-items-center mb-4"
+          >
+            <div class="circles">
+              <i class="fa-solid fa-circle c1"></i>
+              <i class="fa-solid fa-circle c2"></i>
+              <i class="fa-solid fa-circle c3"></i>
+            </div>
+            <button class="btn border-0" id="closeBtn" onclick="closeBox()">
+              <i class="fa-solid fa-xmark fs-4"></i>
+            </button>
+          </div>
+          <p class="error m-0 pb-2">
+            Site Name or Url is not valid, Please follow the rules below :
+          </p>
+          <ol class="rules list-unstyled m-0">
+            <li>
+              <i class="fa-regular fa-circle-right p-2 arrow"></i>Site name must
+              contain at least 3 characters
+            </li>
+            <li>
+              <i class="fa-regular fa-circle-right p-2 arrow"></i>Site URL must
+              be a valid one
+            </li>
+          </ol>
+        </div>
+      </div>
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

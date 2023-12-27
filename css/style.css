@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans Caption', sans-serif;
+}
+body{
+    background-color: #f4f1de;
+    height: 100vh;
+}
+::selection{
+    background-color: #fec260;
+}
+.h1-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    color: #352e28;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+.h1-background {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    /* left: %; */
+    bottom: 2%;
+    background-color: #fec260;
+    transition: height 350ms;
+    z-index: -1;
+}
+.h1-wrapper:hover .h1-background,
+.h1-wrapper:active .h1-background {
+    height: 50%;
+    width: 25%;
+}
+h2{
+    font-family: "Righteous", cursive;
+    font-size: 25px;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+hr{
+    border: none;
+    border-top: 2px dotted rgb(0, 0, 0);
+}
+.box {
+    background-color: #00000078;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.error{
+    font-family: 'Bree Serif', serif;
+}
+.c1{
+    color: red;
+}
+.c2{
+    color: orange;
+}
+.c3{
+    color: green;
+}
+.arrow{
+    color: #BB4120;
+}
+
+.submit{
+    background-color: #d1512d;
+    color: #fff;
+}
+.submit:hover{
+    background-color: #BB4120;
+    color: #fff;
+}
+.update{
+    color: #fff;
+}
+.update:hover{
+    color: #fff;
+}
+.visit-btn{
+    background-color: #9eb23b;
+    color: #fff;
+}
+.visit-btn:hover{
+    background-color: #8A9E23;
+    color: #fff;
+}
+.update-btn{
+    color: #fff;
+}
+.update-btn:hover{
+    color: #fff;
+}
+.delete-btn{
+    background-color: #eb1d36;
+    color: #fff;
+}
+.delete-btn:hover{
+    background-color: #D30820;
+    color: #fff;
+}
+.form-control:focus {
+    border-color: #d1512d;
+    box-shadow: 0 0 0 0.20rem #fac7b4; 
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.update{
+    display: none;
+}
+span{
+    background-color: yellow;
+}
+#nameVaild, #urlVaild{
+    display: none;
+}
+
+#iconError,#iconError2,#iconCorrect ,#iconCorrect2{
+    top: 8px;
+    right: 8px;
+    background-color: transparent;
+}
+#iconError i,#iconError2 i{
+    color: rgba(211, 8, 32, 0.937);
+}
+#iconError ,#iconError2,#iconCorrect ,#iconCorrect2 {
+    display: none;
+}
+#iconCorrect i,#iconCorrect2 i{
+    color: rgba(25, 135, 84, 0.937);
+}
